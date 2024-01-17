@@ -17,7 +17,7 @@ import com.ritika.demo.repository.UserRepository;
 import com.ritika.demo.service.MovieService;
 
 @Service("MovieServiceImpl")
-public class MovieServiceImpl implements MovieService {
+public class MovieServiceImplementation implements MovieService {
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	RestTemplate restTemplate;

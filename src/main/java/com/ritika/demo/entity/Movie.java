@@ -7,9 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Data
@@ -52,11 +50,11 @@ public class Movie {
 		this.mov_director = mov_director;
 	}
 
-	public Integer getyearOfPublish() {
+	public Integer getYearOfPublish() {
 		return yearOfPublish;
 	}
 
-	public void setyearOfPublish(Integer yearOfPublish) {
+	public void setYearOfPublish(Integer yearOfPublish) {
 		this.yearOfPublish = yearOfPublish;
 	}
 

@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping(value = "/byYearSearch", method = RequestMethod.GET)
 	public DiscoverResponse getMovieByYear(@RequestParam Integer movieYear) {
 		DiscoverResponse discoverResponseBean;
-		discoverResponseBean = movieServiceImpl.fetchDiscoverDetailsByYear(movieYear);
+	    discoverResponseBean = movieServiceImpl.fetchDiscoverDetailsByYear(movieYear);
 		return discoverResponseBean;
 
 	}
