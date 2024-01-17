@@ -10,15 +10,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
-import com.ritika.demo.controller.UserController;
 import com.ritika.demo.dto.DiscoverResponse;
 import com.ritika.demo.exception.MoviNotFoundException;
+import com.ritika.demo.moviecontroller.MovieController;
 import com.ritika.demo.repository.UserRepository;
 import com.ritika.demo.service.MovieService;
 
 @Service("MovieServiceImpl")
 public class MovieServiceImplementation implements MovieService {
-	Logger logger = LoggerFactory.getLogger(UserController.class);
+	Logger logger = LoggerFactory.getLogger(MovieController.class);
 	@Autowired
 	RestTemplate restTemplate;
 
@@ -36,14 +36,14 @@ public class MovieServiceImplementation implements MovieService {
 			movieResponseEntity = restTemplate.getForEntity(primaryReleaseYear, DiscoverResponse.class);
 			responseBeanArray = movieResponseEntity.getBody();
 		} catch (RestClientException e) {
-			// TODO Auto-generated catch block
 			throw new MoviNotFoundException("We can't fetch movie for year " + movieYear);
 
 		}
-		/*
-		 * if(responseBeanArray == null) { throw new
-		 * MoviNotFoundException("Movies couldn't be fetched for year " + movieYear); }
-		 */
+		
+		  if(responseBeanArray == null) {
+			  throw new MoviNotFoundException("Movies couldn't be fetched for year " + movieYear); 
+			 }
+		 
 		return responseBeanArray;
 	}
 
