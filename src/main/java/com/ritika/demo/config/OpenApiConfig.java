@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.info.License;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @OpenAPIDefinition(
-		info = @Info(
+		info = @Info( 
 				title = "Movie API",
 				description = "Doing operations",
 				summary = "By using mobie API we can search movies by the year of publish and top-rated",
@@ -15,13 +15,13 @@ import io.swagger.v3.oas.annotations.servers.Server;
 				contact = @Contact(
 						name = "Ritika",
 						email = "abc.@gmail.com"
-						),
+						          ),
 				license = @License(
 						name = "Your License number"
-						),
+						          ),
 				version = "v1"
 				
-				),
+				     ),
 		servers = {
 				@Server(
 						description = "SpringBoot",
@@ -32,11 +32,9 @@ import io.swagger.v3.oas.annotations.servers.Server;
 						url = "http://localhost:8080"
 						)
 				
-		}
+		           }
 		
-		)
-
-
+		            ) 
 public class OpenApiConfig {
 
 }
