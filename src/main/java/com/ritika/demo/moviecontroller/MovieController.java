@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.ritika.demo.dto.DiscoverResponse;
+import com.ritika.demo.dto.DiscoveryResponse;
 import com.ritika.demo.service.MovieService;
 
 @RestController
@@ -16,21 +16,24 @@ import com.ritika.demo.service.MovieService;
 public class MovieController {
 	Logger logger = LoggerFactory.getLogger(MovieController.class);
 	
-	@Autowired
-	MovieService movieServiceImpl;
 
-	@RequestMapping(value = "/byYearSearch", method = RequestMethod.GET)
-	public DiscoverResponse getMovieByYear(@RequestParam Integer movieYear) {
-		DiscoverResponse discoverResponseBean;
-	    discoverResponseBean = movieServiceImpl.fetchDiscoverDetailsByYear(movieYear);
+	final MovieService movieServiceImpl;
+	
+	public MovieController(MovieService movieServiceImpl)
+	{
+		this.movieServiceImpl = movieServiceImpl;
+	}
+
+	@GetMapping("/byYearSearch")
+	public DiscoveryResponse getMovieByYear(@RequestParam Integer movieYear) {
+		DiscoveryResponse discoverResponseBean = movieServiceImpl.fetchDiscoverDetailsByYear(movieYear);
 		return discoverResponseBean;
 
 	}
 
 	@GetMapping("/topRatedMovies")
-	public DiscoverResponse getTopRatedMovies() {
-		DiscoverResponse discoverResponseBean;
-		discoverResponseBean = movieServiceImpl.fetchTopRatedMovies();
+	public DiscoveryResponse getTopRatedMovies() {
+		DiscoveryResponse discoverResponseBean = movieServiceImpl.fetchTopRatedMovies();
 		return discoverResponseBean;
 
 	}
