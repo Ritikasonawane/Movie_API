@@ -1,8 +1,8 @@
 package com.ritika.demo.service;
 
-import com.ritika.demo.dto.DiscoverResponse;
+import com.ritika.demo.dto.DiscoveryResponse;
 
 public interface MovieService {
-	public DiscoverResponse fetchDiscoverDetailsByYear(Integer movieYear);
-	public DiscoverResponse fetchTopRatedMovies();
+	public DiscoveryResponse fetchDiscoverDetailsByYear(Integer movieYear);
+	public DiscoveryResponse fetchTopRatedMovies();
 }
