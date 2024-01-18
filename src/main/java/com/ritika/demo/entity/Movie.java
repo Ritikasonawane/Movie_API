@@ -18,44 +18,13 @@ public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
-	private int id;
+	private Integer id;
 	@Column(name = "mov_name")
-	private String mov_name;
+	private String movName;
 	@Column(name = "mov_director")
-	private String mov_director;
+	private String movDirector;
 	@Column(name = "movieyear")
 	private Integer yearOfPublish;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getMov_name() {
-		return mov_name;
-	}
-
-	public void setMov_name(String mov_name) {
-		this.mov_name = mov_name;
-	}
-
-	public String getMov_director() {
-		return mov_director;
-	}
-
-	public void setMov_director(String mov_director) {
-		this.mov_director = mov_director;
-	}
-
-	public Integer getYearOfPublish() {
-		return yearOfPublish;
-	}
-
-	public void setYearOfPublish(Integer yearOfPublish) {
-		this.yearOfPublish = yearOfPublish;
-	}
 
 }
