@@ -11,20 +11,19 @@ public class MovieResponse {
 	private boolean adult;
 
 	@JsonProperty("backdrop_path")
-	private String backdrop_path;
+	private String backdropPath;
 
 	@JsonProperty("genre_ids")
-	public ArrayList<Integer> genre_ids;
+	public ArrayList<Integer> genreIds;
 
-	@Id
 	@JsonProperty("id")
 	private Integer id;
 
 	@JsonProperty("original_language")
-	private String original_language;
+	private String originalLanguage;
 
 	@JsonProperty("original_title")
-	private String original_title;
+	private String originalTitle;
 
 	@JsonProperty("overview")
 	private String overview;
@@ -33,10 +32,10 @@ public class MovieResponse {
 	private double popularity;
 
 	@JsonProperty("poster_path")
-	private String poster_path;
+	private String posterPath;
 
 	@JsonProperty("release_date")
-	private String release_date;
+	private String releaseDate;
 
 	@JsonProperty("title")
 	private String title;
@@ -45,9 +44,9 @@ public class MovieResponse {
 	private boolean video;
 
 	@JsonProperty("vote_average")
-	private double vote_average;
+	private double voteAverage;
 
 	@JsonProperty("vote_count")
-	private Integer vote_count;
+	private Integer voteCount;
 
 }
